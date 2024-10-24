@@ -5,13 +5,13 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Копируем файлы зависимостей
-COPY ../package.json /app/
+COPY package.json /app/
 
 # Устанавливаем зависимости
 RUN npm install
 
 # Копируем весь проект
-COPY ../ /app/
+COPY . /app/
 
 # Сборка приложения
 RUN npm run build
@@ -23,7 +23,7 @@ FROM nginx:alpine
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Копируем вашу конфигурацию Nginx
-COPY ../nginx/nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d
 
 # Копируем сгенерированные файлы из этапа сборки
 COPY --from=build /app/build /usr/share/nginx/html
