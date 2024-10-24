@@ -5,7 +5,7 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Копируем файлы зависимостей
-COPY package.json package-lock.json /app/
+COPY ../package.json /app/
 
 # Устанавливаем зависимости
 RUN npm install
