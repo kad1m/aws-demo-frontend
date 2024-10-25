@@ -5,8 +5,7 @@ import axios from "axios";
 function App() {
 
   const onClickHandler = () => {
-      const response = axios.get('http://localhost:8000/api/ping/')
-        console.log(response)
+        window.alert("I was clicked");
   }
 
 

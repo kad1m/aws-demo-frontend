@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:eu-north-1:472400096032:task-definition/aws-demo-td:1"
+        LoadBalancerInfo:
+          ContainerName: "frontend"
+          ContainerPort: 80
