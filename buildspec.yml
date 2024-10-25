@@ -25,6 +25,6 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$ECR_IMAGE_TAG
-#artifacts:
-#  files:
-#    - appspec.yml
+artifacts:
+  files:
+    - appspec.yml
